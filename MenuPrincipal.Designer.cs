@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
 {
-    partial class Form1
+    partial class MenuPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,7 +31,8 @@
             components = new System.ComponentModel.Container();
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Text = "Form1";
+            Name = "MenuPrincipal";
+            Text = "Menu Principal";
         }
 
         #endregion
