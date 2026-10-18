@@ -10,5 +10,10 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         {
             InitializeComponent();
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
