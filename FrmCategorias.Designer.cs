@@ -28,17 +28,18 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // FrmCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmCategorias";
-            this.Text = "Categorías";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MidnightBlue;
+            ClientSize = new Size(800, 562);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FrmCategorias";
+            Text = "Categorías";
+            ResumeLayout(false);
 
         }
 
