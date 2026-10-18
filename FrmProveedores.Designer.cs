@@ -242,7 +242,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(726, 863);
+            ClientSize = new Size(585, 863);
             Controls.Add(dgvProveedores);
             Controls.Add(txtBuscar);
             Controls.Add(label9);
