@@ -9,5 +9,20 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         {
             InitializeComponent();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show(
+                            "¿Está seguro de que desea salir?",
+                            "Confirmar salida",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                        );
+
+            if (respuesta == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
