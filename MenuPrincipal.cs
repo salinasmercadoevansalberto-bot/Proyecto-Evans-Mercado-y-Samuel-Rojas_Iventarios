@@ -21,8 +21,44 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
 
             if (respuesta == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
+        //
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            FrmCategorias formulario = new FrmCategorias();
+            formulario.ShowDialog();
+        }//nos permite abrir el formulario de categorias al hacer click en el boton de categorias
+        //
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            FrmClientes formulario = new FrmClientes();
+            formulario.ShowDialog();
+        }//nos permite abrir el formulario de clientes al hacer click en el boton de clientes
+        //
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            FrmCompras formulario = new FrmCompras();
+            formulario.ShowDialog();
+        }//nos permite abrir el formulario de compras al hacer click en el boton de compras
+        //
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmProductos formulario = new FrmProductos();
+            formulario.ShowDialog();
+        }// nos permite abrir el formulario de productos al hacer click en el boton de productos
+        //
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores formulario = new FrmProveedores();
+            formulario.ShowDialog();
+        }//nos permite abrir el formulario de proveedores al hacer click en el boton de proveedores
+        //
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            FrmVentas formulario = new FrmVentas();
+            formulario.ShowDialog();
+        }//nos permite abrir el formulario de ventas al hacer click en el boton de ventas
     }
 }

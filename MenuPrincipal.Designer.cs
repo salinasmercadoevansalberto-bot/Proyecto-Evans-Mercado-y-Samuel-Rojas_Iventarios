@@ -83,6 +83,7 @@
             btnCategorias.TabIndex = 3;
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = false;
+            btnCategorias.Click += btnCategorias_Click;
             // 
             // btnClientes
             // 
@@ -94,6 +95,7 @@
             btnClientes.TabIndex = 4;
             btnClientes.Text = "Clientes";
             btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
             // 
             // btnCompras
             // 
@@ -105,6 +107,7 @@
             btnCompras.TabIndex = 5;
             btnCompras.Text = "Compras";
             btnCompras.UseVisualStyleBackColor = false;
+            btnCompras.Click += btnCompras_Click;
             // 
             // btnProductos
             // 
@@ -116,6 +119,7 @@
             btnProductos.TabIndex = 6;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = false;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnProveedores
             // 
@@ -127,6 +131,7 @@
             btnProveedores.TabIndex = 7;
             btnProveedores.Text = "Proveedores";
             btnProveedores.UseVisualStyleBackColor = false;
+            btnProveedores.Click += btnProveedores_Click;
             // 
             // btnVentas
             // 
@@ -138,6 +143,7 @@
             btnVentas.TabIndex = 8;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click;
             // 
             // btnSalir
             // 
