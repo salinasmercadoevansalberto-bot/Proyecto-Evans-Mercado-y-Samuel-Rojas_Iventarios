@@ -32,12 +32,13 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             label2 = new Label();
             label1 = new Label();
             dgvProveedores = new DataGridView();
-            txtBuscar = new TextBox();
-            label9 = new Label();
             NombredelProveedor = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
             CorreoElectronico = new DataGridViewTextBoxColumn();
             Direccion = new DataGridViewTextBoxColumn();
+            txtBuscar = new TextBox();
+            label9 = new Label();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             SuspendLayout();
             // 
@@ -131,15 +132,10 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.ControlLightLight;
-            label4.Location = new Point(51, 356);
+            label4.Location = new Point(0, 0);
             label4.Name = "label4";
-            label4.Size = new Size(111, 26);
-            label4.TabIndex = 27;
-            label4.Text = "Direccion:";
-            label4.Click += this.label4_Click;
+            label4.Size = new Size(100, 23);
+            label4.TabIndex = 42;
             // 
             // txtNombre
             // 
@@ -191,24 +187,6 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             dgvProveedores.Size = new Size(745, 87);
             dgvProveedores.TabIndex = 41;
             // 
-            // txtBuscar
-            // 
-            txtBuscar.Location = new Point(12, 653);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(281, 27);
-            txtBuscar.TabIndex = 40;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.ControlLightLight;
-            label9.Location = new Point(12, 615);
-            label9.Name = "label9";
-            label9.Size = new Size(260, 26);
-            label9.TabIndex = 39;
-            label9.Text = "Proveedores Registrados";
-            // 
             // NombredelProveedor
             // 
             NombredelProveedor.HeaderText = "Nombre del Proveedor";
@@ -237,12 +215,42 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             Direccion.Name = "Direccion";
             Direccion.Width = 125;
             // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(12, 653);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(281, 27);
+            txtBuscar.TabIndex = 40;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.ControlLightLight;
+            label9.Location = new Point(12, 615);
+            label9.Name = "label9";
+            label9.Size = new Size(260, 26);
+            label9.TabIndex = 39;
+            label9.Text = "Proveedores Registrados";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = SystemColors.ControlLightLight;
+            label7.Location = new Point(51, 355);
+            label7.Name = "label7";
+            label7.Size = new Size(111, 26);
+            label7.TabIndex = 43;
+            label7.Text = "Direccion:";
+            // 
             // FrmProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(585, 863);
+            Controls.Add(label7);
             Controls.Add(dgvProveedores);
             Controls.Add(txtBuscar);
             Controls.Add(label9);
@@ -292,5 +300,6 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         private DataGridViewTextBoxColumn Direccion;
         private TextBox txtBuscar;
         private Label label9;
+        private Label label7;
     }
 }
