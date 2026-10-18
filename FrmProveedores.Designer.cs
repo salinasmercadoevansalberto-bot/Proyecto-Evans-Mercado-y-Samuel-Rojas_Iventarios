@@ -39,6 +39,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             txtBuscar = new TextBox();
             label9 = new Label();
             label7 = new Label();
+            label10 = new Label();
+            btnRetroceder = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             SuspendLayout();
             // 
@@ -90,7 +92,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             // 
             txtCorreo.Location = new Point(51, 310);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(368, 27);
+            txtCorreo.Size = new Size(507, 27);
             txtCorreo.TabIndex = 32;
             // 
             // label6
@@ -108,7 +110,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             // 
             txtTelefono.Location = new Point(51, 226);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(368, 27);
+            txtTelefono.Size = new Size(507, 27);
             txtTelefono.TabIndex = 30;
             // 
             // label5
@@ -126,7 +128,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             // 
             txtDireccion.Location = new Point(51, 395);
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(368, 27);
+            txtDireccion.Size = new Size(507, 27);
             txtDireccion.TabIndex = 28;
             txtDireccion.TextChanged += txtCedula_TextChanged;
             // 
@@ -141,7 +143,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             // 
             txtNombre.Location = new Point(51, 141);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(368, 27);
+            txtNombre.Size = new Size(507, 27);
             txtNombre.TabIndex = 26;
             // 
             // label3
@@ -244,12 +246,33 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             label7.TabIndex = 43;
             label7.Text = "Direccion:";
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(571, 30);
+            label10.Name = "label10";
+            label10.Size = new Size(69, 35);
+            label10.TabIndex = 45;
+            label10.Text = "<==";
+            // 
+            // btnRetroceder
+            // 
+            btnRetroceder.Location = new Point(646, 25);
+            btnRetroceder.Name = "btnRetroceder";
+            btnRetroceder.Size = new Size(117, 40);
+            btnRetroceder.TabIndex = 44;
+            btnRetroceder.Text = "Retroceder";
+            btnRetroceder.UseVisualStyleBackColor = true;
+            // 
             // FrmProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(585, 863);
+            ClientSize = new Size(781, 863);
+            Controls.Add(label10);
+            Controls.Add(btnRetroceder);
             Controls.Add(label7);
             Controls.Add(dgvProveedores);
             Controls.Add(txtBuscar);
@@ -301,5 +324,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         private TextBox txtBuscar;
         private Label label9;
         private Label label7;
+        private Label label10;
+        private Button btnRetroceder;
     }
 }

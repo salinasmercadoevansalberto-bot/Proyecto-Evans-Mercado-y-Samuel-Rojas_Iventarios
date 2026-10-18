@@ -40,6 +40,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnEliminar = new Button();
             btnModificar = new Button();
             btnGuardar = new Button();
+            label10 = new Label();
+            btnRetroceder = new Button();
             SuspendLayout();
             // 
             // label1
@@ -164,12 +166,33 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(747, 40);
+            label10.Name = "label10";
+            label10.Size = new Size(69, 35);
+            label10.TabIndex = 47;
+            label10.Text = "<==";
+            // 
+            // btnRetroceder
+            // 
+            btnRetroceder.Location = new Point(822, 35);
+            btnRetroceder.Name = "btnRetroceder";
+            btnRetroceder.Size = new Size(117, 40);
+            btnRetroceder.TabIndex = 46;
+            btnRetroceder.Text = "Retroceder";
+            btnRetroceder.UseVisualStyleBackColor = true;
+            // 
             // FrmCategorias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(800, 823);
+            ClientSize = new Size(951, 823);
+            Controls.Add(label10);
+            Controls.Add(btnRetroceder);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
@@ -204,5 +227,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         private Button btnEliminar;
         private Button btnModificar;
         private Button btnGuardar;
+        private Label label10;
+        private Button btnRetroceder;
     }
 }

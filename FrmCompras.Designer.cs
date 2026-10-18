@@ -42,6 +42,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnCancelar = new Button();
             btnRegistrarCompra = new Button();
             btnQuitarProducto = new Button();
+            label10 = new Label();
+            btnRetroceder = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDetalleCompra).BeginInit();
             SuspendLayout();
             // 
@@ -282,12 +284,33 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnQuitarProducto.Text = "Quitar Producto";
             btnQuitarProducto.UseVisualStyleBackColor = false;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(884, 55);
+            label10.Name = "label10";
+            label10.Size = new Size(69, 35);
+            label10.TabIndex = 49;
+            label10.Text = "<==";
+            // 
+            // btnRetroceder
+            // 
+            btnRetroceder.Location = new Point(959, 50);
+            btnRetroceder.Name = "btnRetroceder";
+            btnRetroceder.Size = new Size(117, 40);
+            btnRetroceder.TabIndex = 48;
+            btnRetroceder.Text = "Retroceder";
+            btnRetroceder.UseVisualStyleBackColor = true;
+            // 
             // FrmCompras
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(1161, 808);
+            Controls.Add(label10);
+            Controls.Add(btnRetroceder);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrarCompra);
             Controls.Add(btnQuitarProducto);
@@ -344,5 +367,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         private Button btnCancelar;
         private Button btnRegistrarCompra;
         private Button btnQuitarProducto;
+        private Label label10;
+        private Button btnRetroceder;
     }
 }

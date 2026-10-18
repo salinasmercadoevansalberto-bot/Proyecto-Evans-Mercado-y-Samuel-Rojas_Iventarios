@@ -44,6 +44,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             PrecioCosto = new DataGridViewTextBoxColumn();
             PrecioVenta = new DataGridViewTextBoxColumn();
             Existencias = new DataGridViewTextBoxColumn();
+            btnRetroceder = new Button();
+            label10 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
@@ -292,12 +294,34 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             Existencias.Name = "Existencias";
             Existencias.Width = 125;
             // 
+            // btnRetroceder
+            // 
+            btnRetroceder.Location = new Point(762, 22);
+            btnRetroceder.Name = "btnRetroceder";
+            btnRetroceder.Size = new Size(117, 40);
+            btnRetroceder.TabIndex = 22;
+            btnRetroceder.Text = "Retroceder";
+            btnRetroceder.UseVisualStyleBackColor = true;
+            btnRetroceder.Click += button1_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(687, 27);
+            label10.Name = "label10";
+            label10.Size = new Size(69, 35);
+            label10.TabIndex = 23;
+            label10.Text = "<==";
+            // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(891, 1055);
+            Controls.Add(label10);
+            Controls.Add(btnRetroceder);
             Controls.Add(dgvProductos);
             Controls.Add(txtBuscar);
             Controls.Add(label9);
@@ -357,5 +381,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         private DataGridViewTextBoxColumn PrecioCosto;
         private DataGridViewTextBoxColumn PrecioVenta;
         private DataGridViewTextBoxColumn Existencias;
+        private Button btnRetroceder;
+        private Label label10;
     }
 }

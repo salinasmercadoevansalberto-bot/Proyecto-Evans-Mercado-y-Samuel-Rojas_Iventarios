@@ -34,13 +34,15 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnModificar = new Button();
             btnGuardar = new Button();
             dgvClientes = new DataGridView();
-            txtBuscar = new TextBox();
-            label9 = new Label();
             Nombre = new DataGridViewTextBoxColumn();
             Cedula = new DataGridViewTextBoxColumn();
             Telefono = new DataGridViewTextBoxColumn();
             CorreoElectronico = new DataGridViewTextBoxColumn();
             Direccion = new DataGridViewTextBoxColumn();
+            txtBuscar = new TextBox();
+            label9 = new Label();
+            label10 = new Label();
+            btnRetroceder = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -210,24 +212,6 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             dgvClientes.Size = new Size(745, 87);
             dgvClientes.TabIndex = 25;
             // 
-            // txtBuscar
-            // 
-            txtBuscar.Location = new Point(32, 716);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(281, 27);
-            txtBuscar.TabIndex = 24;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.ControlLightLight;
-            label9.Location = new Point(32, 678);
-            label9.Name = "label9";
-            label9.Size = new Size(217, 26);
-            label9.TabIndex = 23;
-            label9.Text = "Clientes Registrados";
-            // 
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
@@ -263,12 +247,51 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             Direccion.Name = "Direccion";
             Direccion.Width = 125;
             // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(32, 716);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(281, 27);
+            txtBuscar.TabIndex = 24;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.ControlLightLight;
+            label9.Location = new Point(32, 678);
+            label9.Name = "label9";
+            label9.Size = new Size(217, 26);
+            label9.TabIndex = 23;
+            label9.Text = "Clientes Registrados";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(632, 47);
+            label10.Name = "label10";
+            label10.Size = new Size(69, 35);
+            label10.TabIndex = 27;
+            label10.Text = "<==";
+            // 
+            // btnRetroceder
+            // 
+            btnRetroceder.Location = new Point(707, 42);
+            btnRetroceder.Name = "btnRetroceder";
+            btnRetroceder.Size = new Size(117, 40);
+            btnRetroceder.TabIndex = 26;
+            btnRetroceder.Text = "Retroceder";
+            btnRetroceder.UseVisualStyleBackColor = true;
+            // 
             // FrmClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(863, 859);
+            Controls.Add(label10);
+            Controls.Add(btnRetroceder);
             Controls.Add(dgvClientes);
             Controls.Add(txtBuscar);
             Controls.Add(label9);
@@ -323,5 +346,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         private DataGridViewTextBoxColumn Telefono;
         private DataGridViewTextBoxColumn CorreoElectronico;
         private DataGridViewTextBoxColumn Direccion;
+        private Label label10;
+        private Button btnRetroceder;
     }
 }
