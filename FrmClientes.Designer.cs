@@ -274,6 +274,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             label10.Size = new Size(69, 35);
             label10.TabIndex = 27;
             label10.Text = "<==";
+            label10.Click += label10_Click;
             // 
             // btnRetroceder
             // 
@@ -283,6 +284,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnRetroceder.TabIndex = 26;
             btnRetroceder.Text = "Retroceder";
             btnRetroceder.UseVisualStyleBackColor = true;
+            btnRetroceder.Click += this.btnRetroceder_Click;
             // 
             // FrmClientes
             // 

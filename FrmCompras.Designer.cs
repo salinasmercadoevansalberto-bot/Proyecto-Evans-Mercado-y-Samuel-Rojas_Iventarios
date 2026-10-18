@@ -302,6 +302,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnRetroceder.TabIndex = 48;
             btnRetroceder.Text = "Retroceder";
             btnRetroceder.UseVisualStyleBackColor = true;
+            btnRetroceder.Click += btnRetroceder_Click;
             // 
             // FrmCompras
             // 

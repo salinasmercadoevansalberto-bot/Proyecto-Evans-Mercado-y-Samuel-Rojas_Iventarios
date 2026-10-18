@@ -15,5 +15,14 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         {
 
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnRetroceder_Click(object sender, EventArgs e)
+        {
+            Funcion_de_Regreso_Boton.Regreso(this);
+        }
     }
 }
