@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
 {
-    internal class Funcion_de_Regreso
+    internal class Funcion_de_Regreso_Boton
     {
         public static void Regreso()
         {
