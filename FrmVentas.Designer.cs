@@ -55,7 +55,6 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             label3.Size = new Size(193, 26);
             label3.TabIndex = 31;
             label3.Text = "Cliente (opcional):";
-            label3.Click += this.label3_Click;
             // 
             // label2
             // 
@@ -67,7 +66,6 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             label2.Size = new Size(497, 26);
             label2.TabIndex = 30;
             label2.Text = "Venta de productos y actualización del inventario";
-            label2.Click += this.label2_Click;
             // 
             // label1
             // 
@@ -79,7 +77,6 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             label1.Size = new Size(249, 35);
             label1.TabIndex = 29;
             label1.Text = "Registro de Ventas";
-            label1.Click += this.label1_Click;
             // 
             // cmbCliente
             // 
