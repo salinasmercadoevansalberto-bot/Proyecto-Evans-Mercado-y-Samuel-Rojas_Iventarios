@@ -37,6 +37,7 @@
             btnProductos = new Button();
             btnProveedores = new Button();
             btnVentas = new Button();
+            btnSalir = new Button();
             SuspendLayout();
             // 
             // label1
@@ -138,12 +139,24 @@
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = false;
             // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.RoyalBlue;
+            btnSalir.ForeColor = SystemColors.ControlLightLight;
+            btnSalir.Location = new Point(719, 530);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(108, 43);
+            btnSalir.TabIndex = 9;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            // 
             // MenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MidnightBlue;
             ClientSize = new Size(865, 599);
+            Controls.Add(btnSalir);
             Controls.Add(btnVentas);
             Controls.Add(btnProveedores);
             Controls.Add(btnProductos);
@@ -170,5 +183,6 @@
         private Button btnProductos;
         private Button btnProveedores;
         private Button btnVentas;
+        private Button btnSalir;
     }
 }
