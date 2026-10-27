@@ -1,3 +1,4 @@
+using Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Metodos;
 using System;
 using System.Windows.Forms;
 
