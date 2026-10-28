@@ -17,6 +17,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
 
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             txtNombre = new TextBox();
@@ -43,7 +44,9 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             label9 = new Label();
             label10 = new Label();
             btnRetroceder = new Button();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -74,6 +77,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(368, 27);
             txtNombre.TabIndex = 6;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // label3
             // 
@@ -284,7 +288,11 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnRetroceder.TabIndex = 26;
             btnRetroceder.Text = "Retroceder";
             btnRetroceder.UseVisualStyleBackColor = true;
-            btnRetroceder.Click += this.btnRetroceder_Click;
+            btnRetroceder.Click += btnRetroceder_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // FrmClientes
             // 
@@ -317,6 +325,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             Name = "FrmClientes";
             Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -350,5 +359,6 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         private DataGridViewTextBoxColumn Direccion;
         private Label label10;
         private Button btnRetroceder;
+        private ErrorProvider errorProvider1;
     }
 }

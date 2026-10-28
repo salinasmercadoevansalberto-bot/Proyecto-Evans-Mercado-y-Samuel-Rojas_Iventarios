@@ -25,5 +25,10 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
         {
             Funcion_de_Regreso_Boton.Regreso(this);
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ErrorProvider_Metodos.MostrarErrorNombre(errorProvider1, txtNombre);
+        }
     }
 }
