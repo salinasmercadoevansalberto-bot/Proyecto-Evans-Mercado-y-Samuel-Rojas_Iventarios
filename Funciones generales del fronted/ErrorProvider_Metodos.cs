@@ -6,86 +6,99 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Metodos
 {
     internal class ErrorProvider_Metodos
     {
-
-
-        // Mostrar error cuando el nombre no es válido
-        public static void MostrarErrorNombre(
-            ErrorProvider errorProvider,
+        public static void ErrorUsuario(ErrorProvider errorProvider,
+                    TextBox txtNombre)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El Usuario es obligatorio.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+        public static void ErrorContraseña(ErrorProvider errorProvider,
+            TextBox txtContraseña)
+        {
+            if (string.IsNullOrWhiteSpace(txtContraseña.Text))
+            {
+                errorProvider.SetError(txtContraseña, "La contraseña es obligatoria.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+        }
+        public static void ErrorNombreC(ErrorProvider errorProvider,
             TextBox txtNombre)
         {
-            errorProvider.SetError(
-                txtNombre,
-                "Ingrese un nombre válido.");
-
-            txtNombre.Focus();
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El Nombre de la categoría es obligatorio.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
         }
-
-        // Mostrar error cuando un campo está vacío
-        public static void MostrarErrorCampoVacio(
-            ErrorProvider errorProvider,
-            Control control,
-            string mensaje)
+        public static void ErrorDescripcionC(ErrorProvider errorProvider,
+            TextBox txtDescripcion)
         {
-            errorProvider.SetError(control, mensaje);
-            control.Focus();
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                errorProvider.SetError(txtDescripcion, "La Descripción de la categoría es obligatoria.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
         }
-
-        // Mostrar error cuando se ingresa un número entero inválido
-        public static void MostrarErrorNumero(
-            ErrorProvider errorProvider,
-            TextBox txtNumero)
+        public static void ErrorNombreP(ErrorProvider errorProvider,
+            TextBox txtNombre)
         {
-            errorProvider.SetError(
-                txtNumero,
-                "Ingrese un número entero válido.");
-
-            txtNumero.Focus();
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                errorProvider.SetError(txtNombre, "El Nombre del producto es obligatorio.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
         }
-
-        // Mostrar error cuando se ingresa un número decimal inválido
-        public static void MostrarErrorDecimal(
-            ErrorProvider errorProvider,
-            TextBox txtDecimal)
+        public static void ErrorPrecio(ErrorProvider errorProvider,
+            TextBox txtPrecio)
         {
-            errorProvider.SetError(
-                txtDecimal,
-                "Ingrese un número decimal válido.");
+            if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+            {
+                errorProvider.SetError(txtPrecio, "El Precio del producto es obligatorio.");
+            }
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
+            {
+                errorProvider.SetError(txtPrecio, "El Precio del producto debe ser un número mayor que cero.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
 
-            txtDecimal.Focus();
         }
-
-        // Mostrar error cuando el correo no es válido
-        public static void MostrarErrorCorreo(
-            ErrorProvider errorProvider,
-            TextBox txtCorreo)
+        public static void Stock(ErrorProvider errorProvider,
+            TextBox txtStock)
         {
-            errorProvider.SetError(
-                txtCorreo,
-                "Ingrese un correo electrónico válido.");
-
-            txtCorreo.Focus();
+            if (string.IsNullOrWhiteSpace(txtStock.Text))
+            {
+                errorProvider.SetError(txtStock, "El Stock  del producto es obligatorio.");
+            }
+            if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
+            {
+                errorProvider.SetError(txtStock, "El Stock del producto debe ser un número mayor o igual que cero.");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
         }
-
-        // Mostrar error cuando el teléfono no es válido
-        public static void MostrarErrorTelefono(
-            ErrorProvider errorProvider,
-            TextBox txtTelefono)
-        {
-            errorProvider.SetError(
-                txtTelefono,
-                "Ingrese un número de teléfono válido.");
-
-            txtTelefono.Focus();
-        }
-
-        // Limpiar el mensaje de error
-        public static void LimpiarError(
-            ErrorProvider errorProvider,
-            Control control)
-        {
-            errorProvider.SetError(control, "");
-        }
-
 
 
     }
