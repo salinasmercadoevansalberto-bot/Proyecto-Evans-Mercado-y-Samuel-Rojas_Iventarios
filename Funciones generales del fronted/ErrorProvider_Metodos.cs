@@ -100,6 +100,9 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Metodos
             }
         }
 
-
+        internal static void MostrarErrorNombre(ErrorProvider errorProvider1, TextBox txtNombre)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
