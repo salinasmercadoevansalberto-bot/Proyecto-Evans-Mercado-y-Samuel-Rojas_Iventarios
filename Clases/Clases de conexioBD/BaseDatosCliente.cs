@@ -26,9 +26,9 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
             ArgumentNullException.ThrowIfNull(cliente);
 
             const string consulta = @"
-                INSERT INTO dbo.Clientes (Nombre, Cedula, Telefono, Correo, Direccion, Estado)
+                INSERT INTO dbo.Clientes (Codigo, Nombre, Cedula, Telefono, Correo, Direccion, Estado)
                 OUTPUT INSERTED.IdCliente
-                VALUES (@Nombre, @Cedula, @Telefono, @Correo, @Direccion, @Estado);";
+                VALUES (@Codigo, @Nombre, @Cedula, @Telefono, @Correo, @Direccion, @Estado);";
 
             using SqlConnection conexion = _conexionBD.ObtenerConexion();
             using SqlCommand comando = new SqlCommand(consulta, conexion);
@@ -44,7 +44,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
         public List<Cliente> Listar(bool soloActivos = false)
         {
             const string consulta = @"
-                SELECT IdCliente, Nombre, Cedula, Telefono, Correo, Direccion, Estado
+                SELECT IdCliente, Codigo, Nombre, Cedula, Telefono, Correo, Direccion, Estado
                 FROM dbo.Clientes
                 WHERE @SoloActivos = 0 OR Estado = 1
                 ORDER BY Nombre;";
@@ -68,7 +68,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
         public Cliente? ObtenerPorId(int idCliente)
         {
             const string consulta = @"
-                SELECT IdCliente, Nombre, Cedula, Telefono, Correo, Direccion, Estado
+                SELECT IdCliente, Codigo, Nombre, Cedula, Telefono, Correo, Direccion, Estado
                 FROM dbo.Clientes
                 WHERE IdCliente = @IdCliente;";
 
@@ -87,7 +87,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
             ArgumentNullException.ThrowIfNull(nombre);
 
             const string consulta = @"
-                SELECT IdCliente, Nombre, Cedula, Telefono, Correo, Direccion, Estado
+                SELECT IdCliente, Codigo, Nombre, Cedula, Telefono, Correo, Direccion, Estado
                 FROM dbo.Clientes
                 WHERE Nombre LIKE @Nombre
                 ORDER BY Nombre;";
@@ -107,6 +107,23 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
             return clientes;
         }
 
+        // Busca clientes por su código propio.
+        public Cliente? ObtenerPorCodigo(string codigo)
+        {
+            ArgumentNullException.ThrowIfNull(codigo);
+            const string consulta = @"
+                SELECT IdCliente, Codigo, Nombre, Cedula, Telefono, Correo, Direccion, Estado
+                FROM dbo.Clientes
+                WHERE Codigo = @Codigo;";
+
+            using SqlConnection conexion = _conexionBD.ObtenerConexion();
+            using SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.Parameters.Add("@Codigo", SqlDbType.NVarChar, 30).Value = codigo;
+            conexion.Open();
+            using SqlDataReader lector = comando.ExecuteReader();
+            return lector.Read() ? LeerCliente(lector) : null;
+        }
+
         // Modifica los datos del cliente; devuelve false si no existe.
         public bool Modificar(Cliente cliente)
         {
@@ -114,7 +131,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
 
             const string consulta = @"
                 UPDATE dbo.Clientes
-                SET Nombre = @Nombre,
+                SET Codigo = @Codigo,
+                    Nombre = @Nombre,
                     Cedula = @Cedula,
                     Telefono = @Telefono,
                     Correo = @Correo,
@@ -146,6 +164,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
         // Agrega al comando los campos de cliente, convirtiendo nulos a DBNull.
         private static void AgregarParametrosCliente(SqlCommand comando, Cliente cliente)
         {
+            comando.Parameters.Add("@Codigo", SqlDbType.NVarChar, 30).Value = cliente.Codigo;
             comando.Parameters.Add("@Nombre", SqlDbType.NVarChar, 100).Value = cliente.Nombre;
             comando.Parameters.Add("@Cedula", SqlDbType.NVarChar, 30).Value = (object?)cliente.Cedula ?? DBNull.Value;
             comando.Parameters.Add("@Telefono", SqlDbType.NVarChar, 20).Value = (object?)cliente.Telefono ?? DBNull.Value;
@@ -181,7 +200,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
                 LeerTextoNullable(lector, "Telefono"),
                 LeerTextoNullable(lector, "Correo"),
                 LeerTextoNullable(lector, "Direccion"),
-                lector.GetBoolean(lector.GetOrdinal("Estado")));
+                lector.GetBoolean(lector.GetOrdinal("Estado")),
+                lector.GetString(lector.GetOrdinal("Codigo")));
         }
 
         // Devuelve null si la columna de texto contiene SQL NULL.

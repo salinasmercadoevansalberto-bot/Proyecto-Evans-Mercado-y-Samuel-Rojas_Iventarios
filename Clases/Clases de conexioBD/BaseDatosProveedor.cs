@@ -26,9 +26,9 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
             ArgumentNullException.ThrowIfNull(proveedor);
 
             const string consulta = @"
-                INSERT INTO dbo.Proveedores (Nombre, Telefono, Correo, Direccion, Estado)
+                INSERT INTO dbo.Proveedores (Codigo, Nombre, Telefono, Correo, Direccion, Estado)
                 OUTPUT INSERTED.IdProveedor
-                VALUES (@Nombre, @Telefono, @Correo, @Direccion, @Estado);";
+                VALUES (@Codigo, @Nombre, @Telefono, @Correo, @Direccion, @Estado);";
 
             using SqlConnection conexion = _conexionBD.ObtenerConexion();
             using SqlCommand comando = new SqlCommand(consulta, conexion);
@@ -44,7 +44,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
         public List<Proveedor> Listar(bool soloActivos = false)
         {
             const string consulta = @"
-                SELECT IdProveedor, Nombre, Telefono, Correo, Direccion, Estado
+                SELECT IdProveedor, Codigo, Nombre, Telefono, Correo, Direccion, Estado
                 FROM dbo.Proveedores
                 WHERE @SoloActivos = 0 OR Estado = 1
                 ORDER BY Nombre;";
@@ -68,7 +68,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
         public Proveedor? ObtenerPorId(int idProveedor)
         {
             const string consulta = @"
-                SELECT IdProveedor, Nombre, Telefono, Correo, Direccion, Estado
+                SELECT IdProveedor, Codigo, Nombre, Telefono, Correo, Direccion, Estado
                 FROM dbo.Proveedores
                 WHERE IdProveedor = @IdProveedor;";
 
@@ -87,7 +87,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
             ArgumentNullException.ThrowIfNull(nombre);
 
             const string consulta = @"
-                SELECT IdProveedor, Nombre, Telefono, Correo, Direccion, Estado
+                SELECT IdProveedor, Codigo, Nombre, Telefono, Correo, Direccion, Estado
                 FROM dbo.Proveedores
                 WHERE Nombre LIKE @Nombre
                 ORDER BY Nombre;";
@@ -107,6 +107,23 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
             return proveedores;
         }
 
+        // Busca un proveedor por su código propio.
+        public Proveedor? ObtenerPorCodigo(string codigo)
+        {
+            ArgumentNullException.ThrowIfNull(codigo);
+            const string consulta = @"
+                SELECT IdProveedor, Codigo, Nombre, Telefono, Correo, Direccion, Estado
+                FROM dbo.Proveedores
+                WHERE Codigo = @Codigo;";
+
+            using SqlConnection conexion = _conexionBD.ObtenerConexion();
+            using SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.Parameters.Add("@Codigo", SqlDbType.NVarChar, 30).Value = codigo;
+            conexion.Open();
+            using SqlDataReader lector = comando.ExecuteReader();
+            return lector.Read() ? LeerProveedor(lector) : null;
+        }
+
         // Modifica los datos del proveedor; devuelve false si no existe.
         public bool Modificar(Proveedor proveedor)
         {
@@ -114,7 +131,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
 
             const string consulta = @"
                 UPDATE dbo.Proveedores
-                SET Nombre = @Nombre,
+                SET Codigo = @Codigo,
+                    Nombre = @Nombre,
                     Telefono = @Telefono,
                     Correo = @Correo,
                     Direccion = @Direccion,
@@ -145,6 +163,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
         // Agrega al comando los datos del proveedor.
         private static void AgregarParametrosProveedor(SqlCommand comando, Proveedor proveedor)
         {
+            comando.Parameters.Add("@Codigo", SqlDbType.NVarChar, 30).Value = proveedor.Codigo;
             comando.Parameters.Add("@Nombre", SqlDbType.NVarChar, 100).Value = proveedor.Nombre;
             comando.Parameters.Add("@Telefono", SqlDbType.NVarChar, 20).Value = (object?)proveedor.Telefono ?? DBNull.Value;
             comando.Parameters.Add("@Correo", SqlDbType.NVarChar, 100).Value = (object?)proveedor.Correo ?? DBNull.Value;
@@ -178,7 +197,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
                 LeerTextoNullable(lector, "Telefono"),
                 LeerTextoNullable(lector, "Correo"),
                 LeerTextoNullable(lector, "Direccion"),
-                lector.GetBoolean(lector.GetOrdinal("Estado")));
+                lector.GetBoolean(lector.GetOrdinal("Estado")),
+                lector.GetString(lector.GetOrdinal("Codigo")));
         }
 
         // Devuelve null si la columna de texto contiene SQL NULL.

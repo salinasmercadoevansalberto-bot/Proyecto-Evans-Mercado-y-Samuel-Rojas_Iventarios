@@ -34,6 +34,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
 
         public bool HayStock(int cantidad) => cantidad > 0 && Existencias >= cantidad;
 
-        public override string ToString() => Nombre;
+        public string CodigoNombre => $"{Codigo} - {Nombre}";
+
+        public override string ToString() => CodigoNombre;
     }
 }

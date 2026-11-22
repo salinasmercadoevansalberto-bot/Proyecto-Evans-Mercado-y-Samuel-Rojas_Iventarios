@@ -4,6 +4,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
     public class Cliente
     {
         public int IdCliente { get; set; }
+        public string Codigo { get; set; } = string.Empty;
         public string Nombre { get; set; } = string.Empty;
         public string? Cedula { get; set; }
         public string? Telefono { get; set; }
@@ -14,9 +15,10 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
         public Cliente() { }
 
         public Cliente(int idCliente, string nombre, string? cedula, string? telefono,
-                       string? correo, string? direccion, bool estado = true)
+                       string? correo, string? direccion, bool estado = true, string codigo = "")
         {
             IdCliente = idCliente;
+            Codigo = codigo;
             Nombre = nombre;
             Cedula = cedula;
             Telefono = telefono;
@@ -25,6 +27,8 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios.Clases
             Estado = estado;
         }
 
-        public override string ToString() => Nombre;
+        public string CodigoNombre => $"{Codigo} - {Nombre}";
+
+        public override string ToString() => CodigoNombre;
     }
 }

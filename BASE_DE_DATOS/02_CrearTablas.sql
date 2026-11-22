@@ -35,6 +35,7 @@ GO
 -- 3. Clientes
 CREATE TABLE Clientes (
     IdCliente INT IDENTITY(1,1) PRIMARY KEY,
+    Codigo NVARCHAR(30) NOT NULL UNIQUE,
     Nombre NVARCHAR(100) NOT NULL,
     Cedula NVARCHAR(30),
     Telefono NVARCHAR(20),
@@ -47,6 +48,7 @@ GO
 -- 4. Proveedores
 CREATE TABLE Proveedores (
     IdProveedor INT IDENTITY(1,1) PRIMARY KEY,
+    Codigo NVARCHAR(30) NOT NULL UNIQUE,
     Nombre NVARCHAR(100) NOT NULL,
     Telefono NVARCHAR(20),
     Correo NVARCHAR(100),

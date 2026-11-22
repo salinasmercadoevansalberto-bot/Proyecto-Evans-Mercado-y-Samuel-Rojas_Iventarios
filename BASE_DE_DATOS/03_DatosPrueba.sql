@@ -45,22 +45,22 @@ BEGIN TRY
     -- 3. CLIENTES
     -- =========================================
     INSERT INTO dbo.Clientes
-        (Nombre, Cedula, Telefono, Correo, Direccion, Estado)
+        (Codigo, Nombre, Cedula, Telefono, Correo, Direccion, Estado)
     VALUES
-        ('Ana Rodriguez', '101110111', '8888-1111',
+        ('CLI-ANA-001', 'Ana Rodriguez', '101110111', '8888-1111',
          'ana@example.com', 'San Jose', 1),
-        ('Carlos Mendez', '202220222', '8888-2222',
+        ('CLI-CAR-002', 'Carlos Mendez', '202220222', '8888-2222',
          'carlos@example.com', 'Perez Zeledon', 1);
 
     -- =========================================
     -- 4. PROVEEDORES
     -- =========================================
     INSERT INTO dbo.Proveedores
-        (Nombre, Telefono, Correo, Direccion, Estado)
+        (Codigo, Nombre, Telefono, Correo, Direccion, Estado)
     VALUES
-        ('Distribuidora Central', '2222-1111',
+        ('PRO-DIS-001', 'Distribuidora Central', '2222-1111',
          'central@example.com', 'San Jose', 1),
-        ('Comercial La Economica', '2222-2222',
+        ('PRO-COM-002', 'Comercial La Economica', '2222-2222',
          'economica@example.com', 'Cartago', 1);
 
     -- =========================================
