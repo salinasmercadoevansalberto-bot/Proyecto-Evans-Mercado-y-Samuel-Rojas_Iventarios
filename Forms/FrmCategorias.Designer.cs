@@ -109,6 +109,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             lstCategorias.Name = "lstCategorias";
             lstCategorias.Size = new Size(368, 284);
             lstCategorias.TabIndex = 36;
+            lstCategorias.SelectedIndexChanged += lstCategorias_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -131,6 +132,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnLimpiar.TabIndex = 42;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnEliminar
             // 
@@ -154,6 +156,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnModificar.TabIndex = 40;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
@@ -165,6 +168,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             btnGuardar.TabIndex = 39;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label10
             // 
@@ -209,6 +213,7 @@ namespace Proyecto_Evans_Mercado_y_Samuel_Rojas_Iventarios
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmCategorias";
             Text = "Categorías";
+            Load += FrmCategorias_Load;
             ResumeLayout(false);
             PerformLayout();
 
